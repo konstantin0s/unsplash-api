@@ -48,10 +48,9 @@ app.listen(port, () => {
 
 //close mongodb
 process.on('SIGINT', function () {
-  mongoose.connection.close(function () {
-    console.log('Mongoose disconnected on app termination');
+
+    console.log('Unspash express disconnected on app termination');
     process.exit(0);
-  });
 });
 
 module.exports = app;
