@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Unsplash from './Unsplash';
 import Loading from './Loading';
+import PhotoContainer from './PhotoContainer';
 import axios from 'axios';
 import './css/unsplashlist.css'
 
@@ -36,7 +37,9 @@ componentDidMount = () => {
     console.log( unsplashlist);
         return (
 
-            <div className="unsplash-list">
+        <React.Fragment>
+                  <PhotoContainer />
+              <div className="unsplash-list">
                 <div className="unsplash-map">
                                         {
 
@@ -51,6 +54,7 @@ componentDidMount = () => {
 
                 </div>
             </div>
+        </React.Fragment>
         )
     }
 }

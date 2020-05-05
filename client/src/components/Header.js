@@ -10,6 +10,10 @@ import './css/header.css';
             <React.Fragment>
             <header className="header" id="masthead">
                 <nav className="links">
+      <div className="loogo">
+      <Link style={linkStyle} className="logoStyle" to="#">Unsplease</Link>
+                <p>Photos for everyone</p>
+      </div>
                     <Link style={linkStyle} className="link" to="/">Home</Link>
                     <Link style={linkStyle} className="link" to="/unsplash">Unsplease</Link>
                 </nav>
@@ -25,6 +29,7 @@ const linkStyle = {
     marginRight: "20px",
     marginLeft: "20px"
   };
+
   
 
 export default Header;
