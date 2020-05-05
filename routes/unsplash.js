@@ -14,12 +14,11 @@ const apiKey = process.env.API_KEY;
 const unsplashUrl = 'https://api.unsplash.com/photos/'
 
 //get all photos by name
-router.get('/search', function (req, res, next) {
+router.get('/unsplash', function (req, res, next) {
  
     const options = {
         params: {
-          key: apiKey,
-          secret: secretKey,
+          client_id: apiKey,
           name: req.query.title || '',
           p: req.query.page || 1,
           q: req.query
@@ -29,32 +28,33 @@ router.get('/search', function (req, res, next) {
       let queryString = 'princess'
   axios.get(`${unsplashUrl}` , options).then(function (response) {
     // res.send(response.data);
-    var body = response.data.data;
+    var body = response.data;
     res.json(body);
-    // console.log(body)
+    console.log(body)
     // res.render('locations', {body: body})
   })
+  .catch(err => console.log(err));
 });
 
 //Search photo by id
-router.get('/unsplash/:id', function (req, res, next) {
-  const options = {
-    params: {
-      key: apiKey,
-      secret: secretKey
-    },
-    withCredentials: true
-  }
-  axios.get(`${unsplashUrl}/${req.params.id}`, options).then(function (response) {
-      // res.send(response.data);
-      // var body = response.data;
-      var body = response.data.data;
-      console.log(response.data);
-      res.json(body);
-    })
-    .catch(function (error) {
-      res.status(404).send();
-    });
-});
+// router.get('/unsplash/:id', function (req, res, next) {
+//   const options = {
+//     params: {
+//       key: apiKey,
+//       secret: secretKey
+//     },
+//     withCredentials: true
+//   }
+//   axios.get(`${unsplashUrl}/${req.params.id}`, options).then(function (response) {
+//       // res.send(response.data);
+//       // var body = response.data;
+//       var body = response.data.data;
+//       console.log(response.data);
+//       res.json(body);
+//     })
+//     .catch(function (error) {
+//       res.status(404).send();
+//     });
+// });
 
 module.exports = router;
