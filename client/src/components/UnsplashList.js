@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Unsplash from './Unsplash';
 import Loading from './Loading';
 import axios from 'axios';
+import './css/unsplashlist.css'
 
  class UnsplashList extends Component {
 constructor(props) {
@@ -36,7 +37,7 @@ componentDidMount = () => {
         return (
 
             <div className="unsplash-list">
-                <div>
+                <div className="unsplash-map">
                                         {
 
                                             

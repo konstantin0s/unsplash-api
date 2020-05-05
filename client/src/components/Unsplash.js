@@ -25,7 +25,7 @@ const useStyles = makeStyles({
  const Unsplash = (props) => {
     const classes = useStyles();
 
-    const {unsplash } = this.props;
+    const {unsplash } = props;
 
     return (
         <div className="child-splash">
