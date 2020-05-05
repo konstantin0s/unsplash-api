@@ -4,6 +4,9 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import OneSplash from './components/OneSplash';
+import Home from './components/Home';
+
 
 class App extends Component {
 
@@ -13,7 +16,16 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-         <UnsplashList />
+         <Route exact path="/" component={Home} />
+        <Route exact path="/unsplash" component={UnsplashList} />
+         <Route exact
+        path="/unsplash/:id" 
+        render={request => {
+          const id = request.match.params.id;
+          // console.log(id);
+          return <OneSplash id={id} />;
+        }}
+      />
         </Switch>
           <Footer />
       </div>

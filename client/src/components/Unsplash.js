@@ -53,9 +53,9 @@ const useStyles = makeStyles({
             {/* <Sharing id={props.gif.id}/> */}
           </Button>
        
-          {/* <Link className="linkx" id={props.gif.id} to={`/unsplash/${props.gif.id}`}>
+          <Link className="linkx" id={unsplash.id} to={`/unsplash/${unsplash.id}`}>
                   See More..
-        </Link> */}
+        </Link>
         
         </CardActions>
       </Card>
