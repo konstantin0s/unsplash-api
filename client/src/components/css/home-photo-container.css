@@ -1,0 +1,14 @@
+.home-photo-container {
+    position: absolute;
+    width: 10vw;
+    min-width: 100%;
+    height: 500px;
+    top: 95px;
+    left: 0px;
+    margin-bottom: 50px;
+    background: url('https://images.pexels.com/photos/192136/pexels-photo-192136.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

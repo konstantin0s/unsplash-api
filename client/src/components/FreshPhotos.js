@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Unsplash from './Unsplash';
 import Loading from './Loading';
-import PhotoContainer from './PhotoContainer';
+import HomePC from './HomePC';
 import axios from 'axios';
 import './css/fresh.css';
 
@@ -81,7 +81,7 @@ onSearchChange = e => {
         return (
 
         <React.Fragment>
-                  <PhotoContainer />
+                  <HomePC />
 
                   <div className="contain-form">
                       
