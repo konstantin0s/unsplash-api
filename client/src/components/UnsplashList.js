@@ -16,23 +16,28 @@ constructor(props) {
         term: [],
         pagination: {
             total: 0,
-            currentPage: 1,
+            page: 1,
             itemsPerPage: 25
           }
     }
 }
+
+// searchingFor = term => {
+//       return term || !term;
+//   }
 
 abracadabra = (query = 'office', page) => {
     this.setState(state => ({ ...state, isLoading: true }));
 
     axios.get(`?&query=${query}`, {
         params: {
-            p: page
+            page: page
         }
     })
     .then(res => {
         const unsplash = res.data;
         console.log(unsplash);
+        console.log(res);
         this.setState({
             unsplashlist: unsplash.results,
             isLoading: false,
@@ -70,8 +75,11 @@ onSearchChange = e => {
 }
 
     render() {
-    let {unsplashlist, isLoading } = this.state;
+    let {unsplashlist, isLoading, pagination, term, searchText } = this.state;
     console.log( unsplashlist);
+    console.log( pagination);
+    console.log( term);
+    console.log( searchText);
         return (
 
         <React.Fragment>
@@ -85,7 +93,7 @@ onSearchChange = e => {
 onChange={this.onSearchChange}
 id="searchField"
 type="text"
-// value={searchText}
+value={searchText}
 autoComplete="true"
 ref={input => (this.query = input)}
 placeholder="Enter City Name"
