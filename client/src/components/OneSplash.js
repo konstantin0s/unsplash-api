@@ -20,6 +20,9 @@ const useStyles = makeStyles({
     media: {
       height: 140,
     },
+    widthit: {
+      width: 700
+    }
   });
 
 class OneSplash extends Component {
@@ -60,7 +63,7 @@ delayRender = () => {
     <CardActionArea>
 
       <ReactFancyBox
-      defaultThumbnailWidth='700'
+      defaultThumbnailWidth={useStyles.widthit}
           thumbnail={urls.regular}
           image={urls.regular} />
       <CardContent>
@@ -88,9 +91,9 @@ delayRender = () => {
       </CardContent>
     </CardActionArea>
     <CardActions>
-      <Button size="small" color="primary">
-{/* <Sharing id={ id } /> */}
-      </Button>
+      {/* <Button size="small" color="primary">
+ <Sharing id={ id } /> 
+      </Button> */}
     </CardActions>
   </Card>
 )
@@ -107,7 +110,7 @@ delayRender = () => {
 
         return (
             <div className="onephoto">
-         {this.delayRender()}
+              {this.delayRender()}
             </div>
         )
     }

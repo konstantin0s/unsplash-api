@@ -13,3 +13,17 @@
     width: 100%;
     height: 300px;
 }
+
+.linkx {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.linkx:visited {
+    color: rgb(95, 163, 7);
+}
+
+.linkx:hover {
+    color: rgb(240, 160, 11);
+}

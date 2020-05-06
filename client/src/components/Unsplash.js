@@ -54,10 +54,12 @@ const useStyles = makeStyles({
            <Sharing id={props.gif.id}/> 
           </Button> */}
        
-          <Link className="linkx" id={unsplash.id} to={`/unsplash/${unsplash.id}`}>
-                  See More..
-        </Link>
-        
+            <Button size="small" color="primary">
+                <Link className="linkx" id={unsplash.id} to={`/unsplash/${unsplash.id}`}>
+                      See More..
+            </Link>
+          </Button>
+    
         </CardActions>
       </Card>
       </div>
