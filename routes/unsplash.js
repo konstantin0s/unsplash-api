@@ -26,7 +26,6 @@ router.get('/unsplash', function (req, res, next) {
         },
         withCredentials: true
       };
-      let queryString = 'princess'
   axios.get(`${unsplashUrl}` , options).then(function (response) {
     // res.send(response.data);
     var body = response.data;
@@ -59,5 +58,29 @@ router.get('/unsplash/:id', function (req, res, next) {
       res.status(404).send();
     });
 });
+
+//display new photos
+router.get('/photos', function (req, res, next) {
+  const options = {
+    params: {
+      client_id: apiKey,
+      name: req.query.title || '',
+      page: req.query.page || 1,
+      query: req.query
+    },
+    withCredentials: true
+  }
+  axios.get(`${urlId}`, options).then(function (response) {
+      // res.send(response.data);
+      // var body = response.data;
+      var body = response.data;
+      console.log(response.data);
+      res.json(body);
+    })
+    .catch(function (error) {
+      res.status(404).send();
+    });
+});
+
 
 module.exports = router;

@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import OneSplash from './components/OneSplash';
-import Home from './components/Home';
+import FreshPhotos from './components/FreshPhotos';
 
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-         <Route exact path="/" component={Home} />
+         <Route exact path="/" component={FreshPhotos} />
         <Route exact path="/unsplash" component={UnsplashList} />
          <Route exact
         path="/unsplash/:id" 

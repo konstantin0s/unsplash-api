@@ -1,0 +1,12 @@
+.to-photos {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    border: 3px solid #dddddd;
+    padding: 1em 4em;
+    background: #c5ba22;
+}
+
+.to-photos:hover {
+    color: rgb(61, 58, 53);
+}
