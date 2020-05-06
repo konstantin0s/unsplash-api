@@ -22,9 +22,6 @@ constructor(props) {
     }
 }
 
-// searchingFor = term => {
-//       return term || !term;
-//   }
 
 abracadabra = (query = 'office', page) => {
     this.setState(state => ({ ...state, isLoading: true }));
@@ -35,11 +32,11 @@ abracadabra = (query = 'office', page) => {
         }
     })
     .then(res => {
-        const unsplash = res.data;
+        const unsplash = res.data.results;
         console.log(unsplash);
         console.log(res);
         this.setState({
-            unsplashlist: unsplash.results,
+            unsplashlist: unsplash,
             isLoading: false,
             pagination: {
                 currentPage: res.data.page,
@@ -96,11 +93,10 @@ type="text"
 value={searchText}
 autoComplete="true"
 ref={input => (this.query = input)}
-placeholder="Enter City Name"
+placeholder="Search Free Images"
 aria-label="Search"/>
 {/* {this.renderSuggestions()} */}
 
-<div className="search"></div>
 </form>
 
 </div>

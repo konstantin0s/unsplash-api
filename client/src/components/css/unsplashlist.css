@@ -22,10 +22,23 @@
     top: 150px;
     text-align: center;
     display: flex;
-flex-direction: row;
-justify-content: center;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    min-width: 100px;
+}
+
+#searchField {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 55px;
+    width: 100%;
+    padding: 2px 23px 2px 30px;
+    outline: 0;
+    background-color: #f5f5f5;
 }
 
 .search-form {
     position: relative;
+    width: 70%;
 }

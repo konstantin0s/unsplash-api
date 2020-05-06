@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 // import Sharing from './Sharing';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
+import Moment from "moment";
 
 const useStyles = makeStyles({
   root: {
@@ -38,20 +39,20 @@ const useStyles = makeStyles({
             {unsplash.user.username}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {unsplash.description}
+            {unsplash.description ? unsplash.description.slice(0, 10) : ''}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
             {unsplash.likes} likes
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-           Created: {unsplash.created_at} 
+           Created: {Moment(unsplash.created_at.dateFrom).format('YYYY-MM-DD')}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            {/* <Sharing id={props.gif.id}/> */}
-          </Button>
+          {/* <Button size="small" color="primary">
+           <Sharing id={props.gif.id}/> 
+          </Button> */}
        
           <Link className="linkx" id={unsplash.id} to={`/unsplash/${unsplash.id}`}>
                   See More..
