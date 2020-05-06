@@ -11,7 +11,7 @@ require('dotenv').config();
 
 const secretKey = process.env.SECRET_KEY;
 const apiKey = process.env.API_KEY;
-const unsplashUrl = 'https://api.unsplash.com/photos/'
+const unsplashUrl = 'https://api.unsplash.com/search/photos'
 
 //get all photos by name
 router.get('/unsplash', function (req, res, next) {
@@ -19,9 +19,9 @@ router.get('/unsplash', function (req, res, next) {
     const options = {
         params: {
           client_id: apiKey,
-          name: req.query.title || '',
-          p: req.query.page || 1,
-          q: req.query
+      name: req.query.title || '',
+      page: req.query.page || 1,
+      query: req.query
         },
         withCredentials: true
       };
@@ -42,8 +42,8 @@ router.get('/unsplash/:id', function (req, res, next) {
     params: {
       client_id: apiKey,
       name: req.query.title || '',
-      p: req.query.page || 1,
-      q: req.query
+      page: req.query.page || 1,
+      query: req.query
     },
     withCredentials: true
   }
