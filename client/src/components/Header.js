@@ -14,8 +14,9 @@ import './css/header.css';
       <Link style={linkStyle} className="logoStyle" to="#">Unsplease</Link>
                 <p>Photos for everyone</p>
       </div>
-                    <Link style={linkStyle} className="link" to="/">Images</Link>
-                    <Link style={linkStyle} className="link" to="/unsplash">Collections</Link>
+                    <Link style={linkStyle} className="link" to="/">Start</Link>
+                    <Link style={linkStyle} className="link" to="/unsplash">Images</Link>
+                    <Link style={linkStyle} className="link" to="/collections">Collections</Link>
                 </nav>
             </header>
         </React.Fragment>

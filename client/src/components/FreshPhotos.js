@@ -53,31 +53,9 @@ componentDidMount = () => {
     this.freshPhotos();
 }
 
-handleSubmit = e => {
-    e.preventDefault();
-    this.freshPhotos(this.query.value);
-    e.currentTarget.reset();
-    this.setState({
-        searchText: [],
-        term: []
-    })
-}
-
-onSearchChange = e => {
-    this.freshPhotos(this.query.value);
-    this.setState({
-        searchText: e.target.value,
-        term: e.target.value
-    });
-    console.log(e.target.value);
-}
-
     render() {
-    let {unsplashlist, isLoading, pagination, term, searchText } = this.state;
-    console.log( unsplashlist);
-    console.log( pagination);
-    console.log( term);
-    console.log( searchText);
+    let {unsplashlist, isLoading } = this.state;
+  
         return (
 
         <React.Fragment>
@@ -86,23 +64,8 @@ onSearchChange = e => {
                   <div className="contain-form">
                       
                   <Link className="to-photos"  to={`/unsplash/`}>
-                 Search photos
+                 Explore photos
             </Link>
-
-{/* <form className="search-form" onSubmit={this.handleSubmit}>
-
-<input
-onChange={this.onSearchChange}
-id="searchField"
-type="text"
-value={searchText}
-autoComplete="true"
-ref={input => (this.query = input)}
-placeholder="Search Free Images"
-aria-label="Search"/>
-
-</form> */}
-
 </div>
               <div className="unsplash-list">
                 <div className="unsplash-map">
