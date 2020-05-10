@@ -33,8 +33,8 @@ collections = (query = 'office', page) => {
     })
     .then(res => {
         const collections = res.data.photos;
-        console.log(collections);
-        console.log(res);
+        // console.log(collections);
+        // console.log(res);
         this.setState({
             collections: collections.results,
             isLoading: false,
@@ -68,14 +68,14 @@ onSearchChange = e => {
         searchText: e.target.value,
         term: e.target.value
     });
-    console.log(e.target.value);
+    // console.log(e.target.value);
 }
 
     render() {
     let {collections, isLoading, term, searchText } = this.state;
-    console.log( collections);
-    console.log( term);
-    console.log( searchText);
+    // console.log( collections);
+    // console.log( term);
+    // console.log( searchText);
         return (
 
         <React.Fragment>

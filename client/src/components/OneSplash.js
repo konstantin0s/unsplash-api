@@ -47,52 +47,62 @@ componentDidMount() {
     this.matchSplash();
 }
 
+showFancy = () => {
+  const  { urls } =  this.state.unsplash;
+
+  return (
+    <ReactFancyBox data-fancybox data-caption="This image has a simple caption"
+      thumbnail={urls.regular}
+    image={urls.regular} />
+  )
+}
+
 
 delayRender = () => {
     const { user, id, urls, likes, description,  created_at, exif } = this.state.unsplash;
     // console.log(this.state.unsplash);
     const { isLoading} = this.state;
     if (!isLoading) {
-
-    return (
-        <React.Fragment>
-              <Card>
-    <CardActionArea>
+    
+          return (
+    
+            <React.Fragment>
+            <Card>
+  <CardActionArea>
 <CardContent>
-<ReactFancyBox  thumbnail={urls.regular}
-          image={urls.regular} />
+              {this.showFancy()}
 </CardContent>
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {user.name}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-       {description}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-       Created at: {created_at}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-       {likes} likes
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-       {user.bio} 
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-        Instragram: {user.instagram_username}  
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-            Shooting model: {exif.model}  
-        </Typography>
-      </CardContent>
-    </CardActionArea>
-    <CardActions>
-      {/* <Button size="small" color="primary">
- <Sharing id={ id } /> 
-      </Button> */}
-    </CardActions>
-  </Card>
-        </React.Fragment>
+    <CardContent>
+      <Typography gutterBottom variant="h5" component="h2">
+        {user.name}
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+     {description}
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+     Created at: {created_at}
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+     {likes} likes
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+     {user.bio} 
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+      Instragram: {user.instagram_username}  
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+          Shooting model: {exif.model}  
+      </Typography>
+    </CardContent>
+  </CardActionArea>
+  <CardActions>
+    {/* <Button size="small" color="primary">
+<Sharing id={ id } /> 
+    </Button> */}
+  </CardActions>
+</Card>
+      </React.Fragment>
 )
     } else {
         return (
@@ -109,7 +119,11 @@ delayRender = () => {
 
         return (
             <div className="onephoto">
-              {this.delayRender()}
+              {
+
+                  this.delayRender()
+    
+              }
             </div>
         )
     }

@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 
  const Unsplash = (props) => {
     const classes = useStyles();
-    console.log(classes)
+
 
     const {unsplash } = props;
 
