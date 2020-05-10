@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './css/onephoto.css';
+import './css/onecollection.css';
 import Loading from './Loading';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+// import Formix from './Formix';
 // import Sharing from './Sharing';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
@@ -37,9 +38,9 @@ constructor(props) {
 
 oneCollection = () => {
 console.log(this.props.id);
-    axios.get(`/collection/${this.props.id}`)
+    axios.get(`/${this.props.id}`)
         .then(res => {
-            // console.log(res.data.data);
+            console.log(res.data.data);
           const collection = res.data;
           this.setState({ collection: collection,
             isLoading: false
@@ -54,7 +55,8 @@ componentDidMount() {
 
 
 delayRender = () => {
-    const { user, preview_photos, location, published_at, total_photos } = this.state.collection;
+    const { user, description, title,
+         preview_photos, published_at } = this.state.collection;
     console.log(this.state.collection);
     const { isLoading} = this.state;
     if (!isLoading) {
@@ -69,10 +71,13 @@ delayRender = () => {
             {user.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {location ? location : ''}
+            {title ? title : ''}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {total_photos} photos
+            {description} 
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            {user.location ? user.location : ''} 
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
            Created: {Moment(published_at.dateFrom).format('YYYY-MM-DD')}
@@ -106,6 +111,7 @@ delayRender = () => {
 
         return (
             <div className="onecollection">
+               {/* <Formix id={this.props.id} /> */}
               {this.delayRender()}
             </div>
         )

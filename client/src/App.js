@@ -8,6 +8,7 @@ import OneSplash from './components/OneSplash';
 import FreshPhotos from './components/FreshPhotos';
 import Collections from './components/Collections';
 import OneCollection from './components/OneCollection';
+// import AddPhoto from './components/AddPhoto';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
          <Route exact path="/" component={FreshPhotos} />
         <Route exact path="/unsplash" component={UnsplashList} />
         <Route exact path="/collections" component={Collections} />
+        {/* <Route exact path="/add" component={AddPhoto} /> */}
          <Route exact
         path="/unsplash/:id" 
         render={request => {

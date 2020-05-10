@@ -19,24 +19,24 @@ const useStyles = makeStyles({
   },
   media: {
     height: 160,
-    width: 345
   },
 });
 
  const Unsplash = (props) => {
     const classes = useStyles();
+    console.log(classes)
 
     const {unsplash } = props;
 
     return (
         <div className="child-splash">
-      <Card className={classes.root}>
+      <Card>
         <CardActionArea>
-               <ReactFancyBox className={classes.media} thumbnail={unsplash.urls.regular}
+               <ReactFancyBox className="fancy-box" thumbnail={unsplash.urls.regular}
                 image={unsplash.urls.regular} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-            {unsplash.user.username}
+             {unsplash.user.username}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
             {unsplash.description ? unsplash.description.slice(0, 10) : ''}
@@ -45,7 +45,7 @@ const useStyles = makeStyles({
             {unsplash.likes} likes
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-           Created: {Moment(unsplash.created_at.dateFrom).format('YYYY-MM-DD')}
+            Created: {Moment(unsplash.created_at.dateFrom).format('YYYY-MM-DD')}
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -13,26 +13,36 @@ constructor(props) {
         collections: [],
         isLoading: true,
         searchText: [],
-        term: []
+        term: [],
+        pagination: {
+            total: 0,
+            page: 1,
+            itemsPerPage: 25
+          }
     }
 }
 
 
-collections = (page) => {
+collections = (query = 'office', page) => {
     this.setState(state => ({ ...state, isLoading: true }));
 
-    axios.get(`/collections`, {
+    axios.get(`/collections?&query=${query}`, {
         params: {
             page: page
         }
     })
     .then(res => {
-        const collections = res.data;
+        const collections = res.data.photos;
         console.log(collections);
         console.log(res);
         this.setState({
-            collections: collections,
-            isLoading: false
+            collections: collections.results,
+            isLoading: false,
+            pagination: {
+                currentPage: res.data.page,
+                itemsPerPage: this.state.pagination.itemsPerPage,
+                total: res.data.photos.total_pages
+            }
         })
     })
     .catch(err => console.log(err))

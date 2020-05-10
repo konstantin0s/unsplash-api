@@ -19,7 +19,6 @@ const useStyles = makeStyles({
   },
   media: {
     height: 160,
-    width: 345
   },
 });
 
@@ -32,20 +31,23 @@ const useStyles = makeStyles({
         <div className="child-splash">
       <Card className={classes.root}>
         <CardActionArea>
-               <ReactFancyBox className={classes.media} thumbnail={collection.preview_photos[0].urls.regular}
-                image={collection.preview_photos[0].urls.regular} />
+               <ReactFancyBox className={classes.media} thumbnail={collection.urls.regular}
+                image={collection.urls.regular} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
             {collection.user.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {collection.location ? collection.location : ''}
+            {collection.user.location ? collection.user.location : ''}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {collection.total_photos} photos
+            Twitter user: {collection.user.twitter_username}
+            </Typography>
+             <Typography variant="body2" color="textSecondary" component="p">
+            Bio: {collection.user.bio}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-           Created: {Moment(collection.published_at.dateFrom).format('YYYY-MM-DD')}
+           Created: {Moment(collection.created_at.dateFrom).format('YYYY-MM-DD')}
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -54,11 +56,11 @@ const useStyles = makeStyles({
            <Sharing id={props.gif.id}/> 
           </Button> */}
        
-            <Button size="small" color="primary">
+            {/* <Button size="small" color="primary">
                 <Link className="linkx" id={collection.id} to={`/collection/${collection.id}`}>
                       See More..
             </Link>
-          </Button>
+          </Button> */}
     
         </CardActions>
       </Card>

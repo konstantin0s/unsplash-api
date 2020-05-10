@@ -10,3 +10,13 @@
 .to-photos:hover {
     color: rgb(61, 58, 53);
 }
+
+.react-fancybox .box .image-box {
+    width: 50%;
+    height: 100%;
+}
+
+.react-fancybox .thumbnail img {
+    max-width: 500px;
+
+}

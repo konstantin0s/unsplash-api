@@ -7,7 +7,6 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 // import Sharing from './Sharing';
 import ReactFancyBox from 'react-fancybox'
@@ -20,9 +19,6 @@ const useStyles = makeStyles({
     media: {
       height: 140,
     },
-    widthit: {
-      width: 700
-    }
   });
 
 class OneSplash extends Component {
@@ -35,7 +31,7 @@ constructor(props) {
 }
 
 matchSplash = () => {
-console.log(this.props.id);
+// console.log(this.props.id);
     axios.get(`/unsplash/${this.props.id}`)
         .then(res => {
             // console.log(res.data.data);
@@ -54,18 +50,18 @@ componentDidMount() {
 
 delayRender = () => {
     const { user, id, urls, likes, description,  created_at, exif } = this.state.unsplash;
-    console.log(this.state.unsplash);
+    // console.log(this.state.unsplash);
     const { isLoading} = this.state;
     if (!isLoading) {
 
     return (
-    <Card className={useStyles.root}>
+        <React.Fragment>
+              <Card>
     <CardActionArea>
-
-      <ReactFancyBox
-      defaultThumbnailWidth={useStyles.widthit}
-          thumbnail={urls.regular}
+<CardContent>
+<ReactFancyBox  thumbnail={urls.regular}
           image={urls.regular} />
+</CardContent>
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {user.name}
@@ -96,10 +92,13 @@ delayRender = () => {
       </Button> */}
     </CardActions>
   </Card>
+        </React.Fragment>
 )
     } else {
         return (
-           <Loading />
+            <React.Fragment>
+                     <Loading />
+            </React.Fragment>
         )
     }
 }

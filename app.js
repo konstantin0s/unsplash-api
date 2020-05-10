@@ -19,13 +19,13 @@ app.use(cors({
 
 
   app.use(bodyParser.json());
-
+  app.use(bodyParser.urlencoded({ extended: true }))
 //deploy area
 // app.set('view engine', 'hbs');
 // app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/build')));
-app.use(bodyParser.json()); //here
+
 
 
 app.use(function(req, res, next) {

@@ -34,8 +34,8 @@ freshPhotos = (page) => {
     })
     .then(res => {
         const unsplash = res.data;
-        console.log(unsplash);
-        console.log(res);
+        // console.log(unsplash);
+        // console.log(res);
         this.setState({
             unsplashlist: unsplash,
             isLoading: false,
