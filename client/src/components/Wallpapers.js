@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Collection from './Collection';
 import Loading from './Loading';
-import PhotoContainer from './PhotoContainer';
+import WallpaperPC from './WallpaperPC';
 import axios from 'axios';
 import './css/collections.css'
+
 
  class Wallpapers extends Component {
 constructor(props) {
@@ -79,7 +80,7 @@ onSearchChange = e => {
         return (
 
         <React.Fragment>
-                  <PhotoContainer />
+                  <WallpaperPC />
 
                   <div className="contain-form">
 

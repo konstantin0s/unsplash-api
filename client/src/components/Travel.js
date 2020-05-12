@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Collection from './Collection';
 import Loading from './Loading';
-import PhotoContainer from './PhotoContainer';
+import TravelPC from './TravelPC';
 import axios from 'axios';
 import './css/collections.css'
 
@@ -79,7 +79,7 @@ onSearchChange = e => {
         return (
 
         <React.Fragment>
-                  <PhotoContainer />
+                  <TravelPC />
 
                   <div className="contain-form">
 

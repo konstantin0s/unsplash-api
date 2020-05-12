@@ -1,4 +1,4 @@
-.nature-photo-container {
+.travel-photo-container {
     position: absolute;
     width: 10vw;
     min-width: 100%;
@@ -6,7 +6,7 @@
     top: 95px;
     left: 0px;
     margin-bottom: 50px;
-    background: url('https://images.unsplash.com/photo-1589002615196-a7dc3df5bed3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60') no-repeat center center fixed;
+    background: url('https://images.unsplash.com/photo-1581665269479-57504728e479?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -16,7 +16,7 @@
     justify-content: flex-start;
 }
 
-.nature-photo-container h1 {
+.travel-photo-container h1 {
     font-size: 3em;
     color: #fff;
     position: absolute;
@@ -24,7 +24,7 @@
     left: 2em;
 }
 
-.nature-photo-container p {
+.travel-photo-container p {
     font-size: 1em;
     color: #fff;
     position: absolute;

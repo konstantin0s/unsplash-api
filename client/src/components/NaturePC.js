@@ -3,7 +3,7 @@ import './css/nature-photo-container.css'
 
  function NaturePC() {
     return (
-        <div className="animals-photo-container">
+        <div className="nature-photo-container">
           <h1>  Nature</h1>
         <p>
         Let’s celebrate the magic of Mother Earth —
