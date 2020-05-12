@@ -2,6 +2,7 @@
     --ease: all 0.5s ease-out;
     --primary-color: #444;
     --secondary-color: #55abf1;
+    --grey-color: rgb(204, 183, 206);
 }
 
 .header {
@@ -63,4 +64,41 @@
     position: absolute;
     top: 8px;
     left: 10px;
+}
+
+.sub-header {
+    border-top: 2px solid #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    height: 4em;
+    position: relative;
+    top: -1px;
+    z-index: 2;
+    background-color: var(--primary-color);
+}
+
+.sub-nav {
+    position: relative;
+    top: 0px;
+}
+
+.sub-link {
+    font-size: 1em;
+    font-size: 1em;
+    border-bottom: 3px #eff145 solid;
+    padding: 0.4em 0.9em;
+    margin-bottom: 3rem;
+    padding: 1em;
+    margin-bottom: 3rem;
+    transition: var(--ease);
+    position: relative;
+    top: 5px;
+}
+
+.sub-link:hover {
+    padding: 0.8rem 1.9rem;
+    background: var(--grey-color);
+    color: var(--secondary-color);
 }

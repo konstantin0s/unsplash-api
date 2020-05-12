@@ -5,12 +5,12 @@ import PhotoContainer from './PhotoContainer';
 import axios from 'axios';
 import './css/collections.css'
 
- class Collections extends Component {
+ class Nature extends Component {
 constructor(props) {
     super(props);
 
     this.state = {
-        collections: [],
+        travel: [],
         isLoading: true,
         searchText: [],
         term: [],
@@ -23,7 +23,7 @@ constructor(props) {
 }
 
 
-collections = (query = 'office', page) => {
+travel = (query = 'travel', page) => {
     this.setState(state => ({ ...state, isLoading: true }));
 
     axios.get(`/collections?&query=${query}`, {
@@ -32,11 +32,11 @@ collections = (query = 'office', page) => {
         }
     })
     .then(res => {
-        const collections = res.data.photos;
+        const travel = res.data.photos;
         // console.log(collections);
         // console.log(res);
         this.setState({
-            collections: collections.results,
+            travel: travel.results,
             isLoading: false,
             pagination: {
                 currentPage: res.data.page,
@@ -49,12 +49,12 @@ collections = (query = 'office', page) => {
 }
 
 componentDidMount = () => {
-    this.collections();
+    this.travel();
 }
 
 handleSubmit = e => {
     e.preventDefault();
-    this.collections(this.query.value);
+    this.travel(this.query.value);
     e.currentTarget.reset();
     this.setState({
         searchText: [],
@@ -63,7 +63,7 @@ handleSubmit = e => {
 }
 
 onSearchChange = e => {
-    this.collections(this.query.value);
+    this.travel(this.query.value);
     this.setState({
         searchText: e.target.value,
         term: e.target.value
@@ -72,7 +72,7 @@ onSearchChange = e => {
 }
 
     render() {
-    let {collections, isLoading, term, searchText } = this.state;
+    let {travel, isLoading, searchText } = this.state;
     // console.log( collections);
     // console.log( term);
     // console.log( searchText);
@@ -108,7 +108,7 @@ aria-label="Search"/>
                         (isLoading) ? <Loading /> : 
 
 
-                        collections.map((collection) => (
+                        travel.map((collection) => (
 
                                 <Collection key={collection.id} collection={collection} />
                             ))   } 
@@ -121,4 +121,4 @@ aria-label="Search"/>
 }
 
 
-export default Collections;
+export default Nature;

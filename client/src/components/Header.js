@@ -17,7 +17,20 @@ import './css/header.css';
                     <Link style={linkStyle} className="link" to="/">Random</Link>
                     <Link style={linkStyle} className="link" to="/unsplash">Images</Link>
                     <Link style={linkStyle} className="link" to="/collections">Collections</Link>
-                    {/* <Link style={linkStyle} className="link" to="/add">Upload</Link> */}
+                </nav>
+
+                </header>
+
+                <header className="sub-header">
+                <nav className="sub-nav">
+      <div className="nav-container">
+      <Link style={linkStyle} className="sub-link" to="/animals">Animals</Link>
+    
+                    <Link style={linkStyle} className="sub-link" to="/nature">Nature</Link>
+                    <Link style={linkStyle} className="sub-link" to="/wallpapers">Wallpapers</Link>
+                    <Link style={linkStyle} className="sub-link" to="/people">People</Link>
+                    <Link style={linkStyle} className="sub-link" to="/travel">Travel</Link>
+                    </div>
                 </nav>
             </header>
         </React.Fragment>
