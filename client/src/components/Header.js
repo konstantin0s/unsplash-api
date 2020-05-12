@@ -39,7 +39,6 @@ import './css/header.css';
 }
 
 const linkStyle = {
-    color: "#fff",
     textDecoration: "none",
     marginRight: "20px",
     marginLeft: "20px"
