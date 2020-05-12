@@ -98,7 +98,7 @@
 }
 
 .sub-link:hover {
-    padding: 0.8rem 1.9rem;
+    padding: 0.8rem 1.3rem;
     background: var(--grey-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
