@@ -63,7 +63,8 @@
 
 @media (min-width: 551px) and (max-width: 789px) {
 
-    .unsplash-map {
+    .unsplash-list .unsplash-map {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 

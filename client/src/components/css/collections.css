@@ -21,4 +21,22 @@
     .collection-map {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .collection-map .react-fancybox .box .image-box {
+        width: 80%;
+        height: 50%;
+    }
+}
+
+
+@media (min-width: 551px) and (max-width: 789px) {
+
+    .collection-map {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collection-map .react-fancybox .box .image-box {
+        width: 80%;
+        height: 50%;
+    }
 }
