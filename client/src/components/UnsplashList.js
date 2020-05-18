@@ -33,8 +33,8 @@ abracadabra = (query = 'office', page) => {
     })
     .then(res => {
         const unsplash = res.data.results;
-        console.log(unsplash);
-        console.log(res);
+        // console.log(unsplash);
+        // console.log(res);
         this.setState({
             unsplashlist: unsplash,
             isLoading: false,
@@ -68,15 +68,10 @@ onSearchChange = e => {
         searchText: e.target.value,
         term: e.target.value
     });
-    console.log(e.target.value);
 }
 
     render() {
     let {unsplashlist, isLoading, pagination, term, searchText } = this.state;
-    console.log( unsplashlist);
-    console.log( pagination);
-    console.log( term);
-    console.log( searchText);
         return (
 
         <React.Fragment>

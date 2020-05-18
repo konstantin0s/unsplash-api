@@ -37,10 +37,10 @@ constructor(props) {
 }
 
 oneCollection = () => {
-console.log(this.props.id);
+// console.log(this.props.id);
     axios.get(`/${this.props.id}`)
         .then(res => {
-            console.log(res.data.data);
+            // console.log(res.data.data);
           const collection = res.data;
           this.setState({ collection: collection,
             isLoading: false
@@ -57,7 +57,7 @@ componentDidMount() {
 delayRender = () => {
     const { user, description, title,
          preview_photos, published_at } = this.state.collection;
-    console.log(this.state.collection);
+    // console.log(this.state.collection);
     const { isLoading} = this.state;
     if (!isLoading) {
 

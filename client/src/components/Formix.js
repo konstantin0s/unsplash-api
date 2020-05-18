@@ -55,7 +55,7 @@ class Formix extends Component {
     // imageUrl => this name has to be the same as in the model since we pass
     // req.body to .create() method when creating a new thing in '/api/things/create' POST route
     uploadData.append('image', e.target.files[0]);
-    console.log(uploadData);
+    // console.log(uploadData);
 
     this.setState({ image:  e.target.files[0] });
 
@@ -91,7 +91,7 @@ class Formix extends Component {
     console.log(collection);
     if (isValid) {
         this.collections(collection).then((res) =>  {
-          console.log(res)
+          // console.log(res)
           this.props.history.push(`/`)
         }
         );
