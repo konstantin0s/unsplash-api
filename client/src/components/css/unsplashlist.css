@@ -42,3 +42,9 @@
     position: relative;
     width: 70%;
 }
+
+@media (min-width: 300px) and (max-width: 550px) {
+    .contain-form {
+        top: 200px;
+    }
+}

@@ -31,3 +31,16 @@
     top: 120px;
     left: 6em;
 }
+
+@media (min-width:300px) and (max-width: 550px) {
+    .nature-photo-container {
+        text-align: center;
+    }
+
+    .nature-photo-container p {
+        display: inline-block;
+        position: relative;
+        left: 3em;
+        width: 80%;
+    }
+}
