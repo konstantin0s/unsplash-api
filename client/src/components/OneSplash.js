@@ -2,24 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './css/onephoto.css';
 import Loading from './Loading';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 // import Sharing from './Sharing';
-import ReactFancyBox from 'react-fancybox'
-import 'react-fancybox/lib/fancybox.css'
-
-const useStyles = makeStyles({
-    root: {
-      maxWidth: 345,
-    },
-    media: {
-      height: 140,
-    },
-  });
+import ReactFancyBox from 'react-fancybox';
+import 'react-fancybox/lib/fancybox.css';
 
 class OneSplash extends Component {
 constructor(props) {
@@ -59,7 +49,7 @@ showFancy = () => {
 
 
 delayRender = () => {
-    const { user, id, urls, likes, description,  created_at, exif } = this.state.unsplash;
+    const { user, likes, description,  created_at, exif } = this.state.unsplash;
     // console.log(this.state.unsplash);
     const { isLoading} = this.state;
     if (!isLoading) {

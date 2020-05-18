@@ -1,11 +1,12 @@
 .unsplash-list {
     position: relative;
-    width: 100%;
+    width: 98%;
     height: 100%;
     text-align: center;
     top: 580px;
     margin-bottom: 100px;
     left: 0;
+    display: inline-block;
 }
 
 .unsplash-map {
@@ -57,5 +58,24 @@
     .unsplash-list .react-fancybox .box .image-box {
         width: 80%;
         height: 50%;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 789px) {
+
+    .unsplash-map {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .unsplash-list .react-fancybox .box .image-box {
+        width: 80%;
+        height: 50%;
+    }
+}
+
+
+@media (min-width: 1550px) {
+    .unsplash-map {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

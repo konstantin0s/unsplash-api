@@ -72,7 +72,7 @@ onSearchChange = e => {
 }
 
     render() {
-    let {nature, isLoading, term, searchText } = this.state;
+    let {nature, isLoading, searchText } = this.state;
     // console.log( collections);
     // console.log( term);
     // console.log( searchText);

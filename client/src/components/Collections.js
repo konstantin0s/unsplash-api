@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {createRef, Component } from 'react';
+import ReactDOM from "react-dom";
 import Collection from './Collection';
 import Loading from './Loading';
 import PhotoContainer from './PhotoContainer';
@@ -21,7 +22,6 @@ constructor(props) {
           }
     }
 }
-
 
 collections = (query = 'office', page) => {
     this.setState(state => ({ ...state, isLoading: true }));
@@ -50,6 +50,10 @@ collections = (query = 'office', page) => {
 
 componentDidMount = () => {
     this.collections();
+    const node = ReactDOM.findDOMNode(this);
+    console.log(node);
+    /* Uses DOM node  */ 
+
 }
 
 handleSubmit = e => {
@@ -71,8 +75,12 @@ onSearchChange = e => {
     // console.log(e.target.value);
 }
 
+
+
+wrapper = createRef();
+
     render() {
-    let {collections, isLoading, term, searchText } = this.state;
+    let {collections, isLoading, searchText } = this.state;
     // console.log( collections);
     // console.log( term);
     // console.log( searchText);
@@ -81,7 +89,7 @@ onSearchChange = e => {
         <React.Fragment>
                   <PhotoContainer />
 
-                  <div className="contain-form">
+                  <div className="contain-form" ref={this.wrapper}>
 
 <form className="search-form" onSubmit={this.handleSubmit}>
 

@@ -135,3 +135,16 @@
         position: relative;
     }
 }
+
+@media (min-width: 551px) and (max-width: 750px) {
+    .sub-link {
+        font-size: 1.2em;
+        padding: 0.7em 0em;
+        margin: 0 22px !important;
+    }
+
+    .loogo {
+        visibility: hidden;
+    }
+
+}

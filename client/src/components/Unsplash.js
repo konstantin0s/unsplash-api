@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './css/unsplash.css';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -13,18 +12,8 @@ import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
 import Moment from "moment";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 160,
-  },
-});
 
  const Unsplash = (props) => {
-    const classes = useStyles();
-
 
     const {unsplash } = props;
 
