@@ -31,3 +31,16 @@
     top: 120px;
     left: 6em;
 }
+
+@media (min-width:300px) and (max-width: 550px) {
+    .wallpaper-photo-container {
+        text-align: center;
+    }
+
+    .wallpaper-photo-container p {
+        display: inline-block;
+        position: relative;
+        left: 3em;
+        width: 80%;
+    }
+}

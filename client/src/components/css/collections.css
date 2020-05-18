@@ -16,3 +16,9 @@
     height: 500px;
     width: 100%;
 }
+
+@media (min-width: 300px) and (max-width: 550px) {
+    .collection-map {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

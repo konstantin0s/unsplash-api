@@ -118,6 +118,7 @@
     .sub-link {
         font-size: 0.9em;
         padding: 1em 0em;
+        margin: 0 12px !important;
     }
 
     .loogo {
