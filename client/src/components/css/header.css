@@ -106,3 +106,31 @@
     background: var(--grey-color);
     color: var(--primary-color);
 }
+
+@media (min-width: 300px) and (max-width: 550px) {
+    .sub-header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sub-link {
+        font-size: 0.9em;
+        padding: 1em 0em;
+    }
+
+    .loogo {
+        visibility: hidden;
+    }
+
+    .link {
+        width: 50px;
+        padding: 0.4em 0.6em;
+    }
+
+    .nav-container {
+        left: 0.3em;
+        position: relative;
+    }
+}
