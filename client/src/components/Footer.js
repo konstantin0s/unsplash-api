@@ -12,7 +12,7 @@ const Footer =() => {
            </a>
     </p>
      
-          <p className="text-center"> 2020 Copyright © Unsplease </p>
+          <p className="text-center"> {new Date().getFullYear()} Copyright © Unsplease </p>
        
       </div>
   );

@@ -102,13 +102,13 @@ router.get('/collections', function (req, res, next) {
       // res.send(response.data);
       // var body = response.data;
       var body = response.data;
-      console.log('search from collection',response.data);
-      console.log('search from related searcg',response.data.related_searches);
+      // console.log('search from collection',response.data);
+      // console.log('search from related searcg',response.data.related_searches);
       res.json(body);
     })
     .catch(function (error) {
       res.status(404).send(error);
-      console.log(error);
+      // console.log(error);
     });
 });
 
@@ -133,7 +133,7 @@ router.get('/:id', function (req, res, next) {
     })
     .catch(function (error) {
       res.status(404).send(error);
-      console.log(error);
+      // console.log(error);
     });
 });
 
