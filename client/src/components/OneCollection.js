@@ -9,6 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import PropTypes from 'prop-types';
 // import Formix from './Formix';
 // import Sharing from './Sharing';
 import ReactFancyBox from 'react-fancybox';
@@ -57,7 +58,7 @@ componentDidMount() {
 delayRender = () => {
     const { user, description, title,
          preview_photos, published_at } = this.state.collection;
-    // console.log(this.state.collection);
+    console.log(this.state.collection);
     const { isLoading} = this.state;
     if (!isLoading) {
 
@@ -116,6 +117,15 @@ delayRender = () => {
             </div>
         )
     }
+}
+
+OneCollection.propTypes = {
+  regular: PropTypes.string,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  dateFrom: PropTypes.string,
+  description: PropTypes.number,
+  location: PropTypes.string,
 }
 
 export default OneCollection;

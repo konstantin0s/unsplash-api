@@ -71,7 +71,7 @@ onSearchChange = e => {
 }
 
     render() {
-    let {unsplashlist, isLoading, pagination, term, searchText } = this.state;
+    let {unsplashlist, isLoading, searchText } = this.state;
         return (
 
         <React.Fragment>

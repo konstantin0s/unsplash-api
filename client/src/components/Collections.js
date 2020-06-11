@@ -51,7 +51,7 @@ collections = (query = 'office', page) => {
 componentDidMount = () => {
     this.collections();
     const node = ReactDOM.findDOMNode(this);
-    // console.log(node);
+    console.log(node);
     /* Uses DOM node  */ 
 
 }
@@ -127,6 +127,5 @@ aria-label="Search"/>
         )
     }
 }
-
 
 export default Collections;

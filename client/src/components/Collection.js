@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
 import Moment from "moment";
+import PropTypes from 'prop-types';
+
 
 const useStyles = makeStyles({
   root: {
@@ -63,5 +65,12 @@ const useStyles = makeStyles({
     );
 }
 
+Unsplash.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  twitter_username: PropTypes.string,
+  bio: PropTypes.string,
+  dateFrom: PropTypes.string,
+}
 
 export default Unsplash;

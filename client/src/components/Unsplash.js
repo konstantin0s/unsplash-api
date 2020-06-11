@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
 import Moment from "moment";
-
+import PropTypes from 'prop-types';
 
  const Unsplash = (props) => {
 
@@ -54,6 +54,16 @@ import Moment from "moment";
       </div>
     );
 }
+
+
+Unsplash.propTypes = {
+  regular: PropTypes.string,
+  username: PropTypes.string,
+  description: PropTypes.string,
+  dateFrom: PropTypes.string,
+  id: PropTypes.string
+}
+
 
 
 export default Unsplash;

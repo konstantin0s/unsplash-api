@@ -8,6 +8,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 // import Sharing from './Sharing';
+import PropTypes from 'prop-types';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
 
@@ -105,8 +106,6 @@ delayRender = () => {
 
 
     render() {
-        // console.log(this.state.gif);
-
         return (
             <div className="onephoto">
               {
@@ -118,5 +117,17 @@ delayRender = () => {
         )
     }
 }
+
+OneSplash.propTypes = {
+  regular: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  created_at: PropTypes.string,
+  likes: PropTypes.number,
+  model: PropTypes.string,
+  bio: PropTypes.string,
+  instagram_username: PropTypes.string
+}
+
 
 export default OneSplash;
