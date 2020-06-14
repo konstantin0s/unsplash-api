@@ -45,3 +45,23 @@ img {
     width: 100%;
     height: 150px;
 }
+
+.oneuser .react-fancybox .image-box img:nth-child(2) {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.bisc {
+    position: relative;
+    color: #333;
+}
+
+.MuiTypography-root .MuiTypography-body2 .MuiTypography-colorTextSecondary {
+    z-index: 100;
+}
+
+.bisc:hover {
+    z-index: 120;
+    color: rgb(62, 196, 28);
+}

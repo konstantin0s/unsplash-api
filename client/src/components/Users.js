@@ -8,11 +8,11 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { Link } from "react-router-dom";
 // import Sharing from './Sharing';
-import PropTypes from 'prop-types';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
+require('dotenv');
+
 
  class Users extends Component {
     constructor(props) {
@@ -45,12 +45,12 @@ import 'react-fancybox/lib/fancybox.css';
 
     secondCall = () => {
                 const { user} = this.state.unsplash;
-                    axios.get(`https://api.unsplash.com/users/${user.username}/?client_id=7190ecea8ceb6f2cc68035a64b7f7122cbb8bb3ab09f22b2c492e542b0aad115`)
+                    axios.get(`https://api.unsplash.com/users/${user.username}/?client_id=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
                 console.log(res.data);
               const userphotos = res.data;
               const photos = res.data.photos;
-                    console.log(photos);
+                    // console.log(photos);
               this.setState({ userphotos: userphotos,
                 photos:photos,
                 isLoading: false
@@ -75,8 +75,8 @@ import 'react-fancybox/lib/fancybox.css';
 
         const  { isLoading,  userphotos} =  this.state;
         const  { photos} =  this.state;
-        console.log(this.state.userphotos);
-        console.log(photos);
+        // console.log(this.state.userphotos);
+        // console.log(photos);
 
         if (!isLoading) {
 
@@ -148,12 +148,13 @@ import 'react-fancybox/lib/fancybox.css';
           <Typography variant="body2" color="textSecondary" component="p">
           Instragram: {user.instagram_username}  
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-              {/* Shooting model: {exif.model}   */}
-          </Typography>
         </CardContent>
       </CardActionArea>
+      <Button variant="body2" color="textSecondary" component="p">
+                 <a className="bisc" href={user.portfolio_url} target="_blank" >  Portfolio: </a>
+          </Button>
       <CardActions>
+   
       </CardActions>
     </Card>
           </div>
@@ -169,9 +170,10 @@ import 'react-fancybox/lib/fancybox.css';
     
     
         render() {
-            return (
+          const { userphotos } = this.state.userphotos;
+                      return (
                 <div className="oneuser">
-                  <h1>Profile user...</h1>
+                  <h1>Profile page</h1>
                   {this.delayRender()}
             {this.listPhotos()}
                 </div>
