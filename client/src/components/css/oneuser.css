@@ -1,0 +1,47 @@
+.oneuser {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 200px;
+}
+
+.delay {
+    position: relative;
+    width: 35%;
+    height: 100%;
+    top: 173px;
+    margin-left: 1em;
+}
+
+.user-photos {
+    position: absolute;
+    top: 173px;
+    width: 70%;
+    left: 532px;
+
+}
+
+.user-photos p {
+    width: 60%;
+    text-align: center;
+    position: relative;
+}
+
+.container-photos {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    grid-gap: 10px;
+    margin-bottom: 100px;
+}
+
+.list-photos {
+    position: relative;
+    height: 150px;
+}
+
+img {
+    position: relative;
+    width: 100%;
+    height: 150px;
+}

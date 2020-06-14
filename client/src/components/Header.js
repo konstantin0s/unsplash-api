@@ -14,6 +14,7 @@ import './css/header.css';
       <Link style={linkStyle} className="logoStyle" to="#">Unsplease</Link>
                 <p>Photos for everyone</p>
       </div>
+      {/* <Link style={linkStyle} className="link" to="/users">User</Link> */}
                     <Link style={linkStyle} className="link" to="/">Random</Link>
                     <Link style={linkStyle} className="link" to="/unsplash">Images</Link>
                     <Link style={linkStyle} className="link" to="/collections">Collections</Link>

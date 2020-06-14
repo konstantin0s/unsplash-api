@@ -12,6 +12,7 @@ import Animals from './components/Animals';
 import Nature from './components/Nature';
 import Wallpapers from './components/Wallpapers';
 import  People from './components/People';
+import  Users from './components/Users';
 import Travel from './components/Travel';
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
         <Route  path="/wallpapers" component={Wallpapers} />
         <Route  path="/nature" component={Nature} />
         <Route  path="/people" component={People} />
+        {/* <Route  path="/users" component={Users} /> */}
         <Route  path="/travel" component={Travel} />
          <Route exact
         path="/unsplash/:id" 
@@ -45,6 +47,15 @@ class App extends Component {
           const id = request.match.params.id;
           // console.log(id);
           return <OneCollection id={id} />;
+        }}
+      />
+
+<Route exact
+        path="/users/:id" 
+        render={request => {
+          const id = request.match.params.id;
+          console.log(id);
+          return <Users id={id} />;
         }}
       />
         </Switch>

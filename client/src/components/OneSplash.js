@@ -7,6 +7,8 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 // import Sharing from './Sharing';
 import PropTypes from 'prop-types';
 import ReactFancyBox from 'react-fancybox';
@@ -50,8 +52,8 @@ showFancy = () => {
 
 
 delayRender = () => {
-    const { user, likes, description,  created_at, exif } = this.state.unsplash;
-    // console.log(this.state.unsplash);
+    const { user, likes, description,  created_at, exif, id } = this.state.unsplash;
+    console.log(this.state.unsplash);
     const { isLoading} = this.state;
     if (!isLoading) {
     
@@ -88,9 +90,11 @@ delayRender = () => {
     </CardContent>
   </CardActionArea>
   <CardActions>
-    {/* <Button size="small" color="primary">
-<Sharing id={ id } /> 
-    </Button> */}
+  <Button size="small" color="primary">
+                <Link className="linkx" id={id} to={`/users/${id}`}>
+                      See user..
+            </Link>
+          </Button>
   </CardActions>
 </Card>
       </React.Fragment>
