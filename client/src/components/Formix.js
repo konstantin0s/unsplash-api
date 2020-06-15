@@ -88,7 +88,7 @@ class Formix extends Component {
       description: this.state.description,
       image: this.state.image.name
     };
-    console.log(collection);
+    // console.log(collection);
     if (isValid) {
         this.collections(collection).then((res) =>  {
           // console.log(res)
@@ -107,9 +107,9 @@ class Formix extends Component {
         image: newCollection.image
         })
         .then(res => {
-          console.log(res);
-      console.log('collection added!');
-      console.log(newCollection);
+      //     console.log(res);
+      // console.log('collection added!');
+      // console.log(newCollection);
     });
   };
   
@@ -127,8 +127,8 @@ class Formix extends Component {
 
 
   render() {
-      console.log(this.props.id);
-      console.log(this.state.image.name);
+      // console.log(this.props.id);
+      // console.log(this.state.image.name);
     return (
       <React.Fragment>
         <MuiThemeProvider>

@@ -11,8 +11,8 @@ export const  collections = newCollection => {
    })
    .then(res => {
 
- console.log('collection added!');
- console.log(newCollection);
+//  console.log('collection added!');
+//  console.log(newCollection);
 });
 };
 

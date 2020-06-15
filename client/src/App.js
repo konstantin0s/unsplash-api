@@ -54,7 +54,6 @@ class App extends Component {
         path="/users/:id" 
         render={request => {
           const id = request.match.params.id;
-          console.log(id);
           return <Users id={id} />;
         }}
       />

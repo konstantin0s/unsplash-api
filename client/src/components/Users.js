@@ -46,7 +46,7 @@ require('dotenv');
                 const { user} = this.state.unsplash;
                     axios.get(`https://api.unsplash.com/users/${user.username}/?client_id=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
               const userphotos = res.data;
               const photos = res.data.photos;
                     // console.log(photos);

@@ -53,7 +53,7 @@ showFancy = () => {
 
 delayRender = () => {
     const { user, likes, description,  created_at, exif, id } = this.state.unsplash;
-    console.log(this.state.unsplash);
+    // console.log(this.state.unsplash);
     const { isLoading} = this.state;
     if (!isLoading) {
     
