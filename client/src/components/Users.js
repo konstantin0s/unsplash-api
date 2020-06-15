@@ -13,7 +13,6 @@ import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
 require('dotenv');
 
-
  class Users extends Component {
     constructor(props) {
         super(props);
@@ -74,7 +73,6 @@ require('dotenv');
       listPhotos = () => {
 
         const  { isLoading,  userphotos} =  this.state;
-        const  { photos} =  this.state;
         // console.log(this.state.userphotos);
         // console.log(photos);
 
@@ -115,8 +113,6 @@ require('dotenv');
 
     delayRender = () => {
         const { user } = this.state.unsplash;
-        console.log(this.state.unsplash);
-        console.log(this.state.userphotos);
         const { isLoading} = this.state;
         if (!isLoading) {
 

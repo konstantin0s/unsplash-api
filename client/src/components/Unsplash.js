@@ -16,7 +16,7 @@ import PropTypes from 'prop-types';
  const Unsplash = (props) => {
 
     const {unsplash } = props;
-    console.log(props);
+    // console.log(props);
     return (
 
         <div className="child-splash">
