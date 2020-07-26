@@ -1,15 +1,13 @@
- 
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import SaveIcon from '@material-ui/icons/Save';
 import TextField from 'material-ui/TextField';
-import { TextareaAutosize } from '@material-ui/core';
-// import './css/formix.css';
-// import { collections } from './HelperFunction';
+import {TextareaAutosize} from '@material-ui/core';
+// import './css/formix.css'; import { collections } from './HelperFunction';
 // import { handleUpload } from './HelperFunction';
 import axios from 'axios';
 
@@ -24,25 +22,26 @@ class Formix extends Component {
       showtimes: '',
       redirect: false,
       helpertext: '',
-      error: false,
+      error: false
     };
 
-    this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.handleFileUpload = this
+      .handleFileUpload
+      .bind(this);
     // this.handleUpload = this.handleUpload.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.onChange = this
+      .onChange
+      .bind(this);
   }
 
   onChange(e) {
     if (e.target.value.length <= 2) {
-      this.setState({
-        helpertext: 'Try Harder',
-        error: true,
-      });
+      this.setState({helpertext: 'Try Harder', error: true});
     } else {
       this.setState({
         [e.target.name]: e.target.value,
         helpertext: '',
-        error: false,
+        error: false
       });
     }
   }
@@ -53,21 +52,18 @@ class Formix extends Component {
 
     const uploadData = new FormData();
     // imageUrl => this name has to be the same as in the model since we pass
-    // req.body to .create() method when creating a new thing in '/api/things/create' POST route
+    // req.body to .create() method when creating a new thing in '/api/things/create'
+    // POST route
     uploadData.append('image', e.target.files[0]);
     // console.log(uploadData);
 
-    this.setState({ image:  e.target.files[0] });
+    this.setState({image: e.target.files[0]});
 
-    // this.handleUpload(uploadData)
-    //   .then((response) => {
-    //     console.log('response is: ', response);
-    //     // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-    //     this.setState({ image: response.name });
-    //   })
-    //   .catch((err) => {
-    //     console.log('Error while uploading the file: ', err);
-    //   });
+    // this.handleUpload(uploadData)   .then((response) => {
+    // console.log('response is: ', response);     // after the console.log we can
+    // see that response carries 'secure_url' which we can use to update the state
+    //   this.setState({ image: response.name });   })   .catch((err) => {
+    // console.log('Error while uploading the file: ', err);   });
   }
 
   validate = () => {
@@ -90,86 +86,75 @@ class Formix extends Component {
     };
     // console.log(collection);
     if (isValid) {
-        this.collections(collection).then((res) =>  {
+      this
+        .collections(collection)
+        .then((res) => {
           // console.log(res)
-          this.props.history.push(`/`)
-        }
-        );
+          this
+            .props
+            .history
+            .push(`/`)
+        });
     }
   };
 
-   collections = newCollection => {
+  collections = newCollection => {
 
-       return axios.post(`/add`, {
+    return axios
+      .post(`/add`, {
 
-        title: newCollection.title,
-        description: newCollection.description,
-        image: newCollection.image
-        })
-        .then(res => {
-      //     console.log(res);
-      // console.log('collection added!');
-      // console.log(newCollection);
-    });
+      title: newCollection.title,
+      description: newCollection.description,
+      image: newCollection.image
+    })
+      .then(res => {
+        //     console.log(res); console.log('collection added!');
+        // console.log(newCollection);
+      });
   };
-  
-  
-//   handleUpload = (theFile) => {
-  
-//     return  axios.post(`/collection/${this.props.id}/add`, theFile)
-//         .then(res => {
-//             res.data
-//         })
-//         .catch(err => {
-//           console.log(err);
-//         });
-//   };
 
+  //   handleUpload = (theFile) => {     return
+  // axios.post(`/collection/${this.props.id}/add`, theFile)         .then(res =>
+  // {             res.data         })         .catch(err => {
+  // console.log(err);         });   };
 
   render() {
-      // console.log(this.props.id);
-      // console.log(this.state.image.name);
+    // console.log(this.props.id); console.log(this.state.image.name);
     return (
       <React.Fragment>
         <MuiThemeProvider>
           <Paper elevation={3}>
             <form className="containerX" onSubmit={this.handleSubmit}>
               <div>
-                <TextField
-                  helpertext={this.state.helpertext}
-                  type="text"
-                  name="director"
-                  placeholder="Director"
-                  // eslint-disable-next-line
-                  type="text"
-                  name="title"
-                  // eslint-disable-next-line
-                  placeholder="Title"
-                  onChange={this.onChange}
-                  error={this.state.error.toString()}
-                  required
-                  id="outlined-required"
-                />
-                <div className="error" style={{ fontSize: 12, color: 'red' }}>
+                <TextField helpertext={this.state.helpertext} type="text" name="director" placeholder="Director" // eslint-disable-next-line
+                  type="text" name="title" // eslint-disable-next-line
+                  placeholder="Title" onChange={this.onChange} error={this
+                  .state
+                  .error
+                  .toString()} required id="outlined-required"/>
+                <div
+                  className="error"
+                  style={{
+                  fontSize: 12,
+                  color: 'red'
+                }}>
                   {this.state.helpertext}
                 </div>
-                <br />
+                <br/>
               </div>
               <div>
                 <Button
                   variant="contained"
                   color="default"
                   className="upload-button"
-                  startIcon={<CloudUploadIcon />}
-                >
+                  startIcon={< CloudUploadIcon />}>
                   {' '}
                   Up
                   <input
                     type="file"
                     name="image"
                     className="btn btn-warning addPic"
-                    onChange={(e) => this.handleFileUpload(e)}
-                  />
+                    onChange={(e) => this.handleFileUpload(e)}/>
                 </Button>
               </div>
 
@@ -183,10 +168,12 @@ class Formix extends Component {
                   columns="3"
                   placeholder="Add Description"
                   onChange={this.onChange}
-                  error={this.state.error.toString()}
+                  error={this
+                  .state
+                  .error
+                  .toString()}
                   required
-                  id="outlined-required"
-                />
+                  id="outlined-required"/>
               </div>
 
               <div>
@@ -196,8 +183,7 @@ class Formix extends Component {
                   color="primary"
                   size="small"
                   className="save-btn"
-                  startIcon={<SaveIcon />}
-                >
+                  startIcon={< SaveIcon />}>
                   Submit
                 </Button>
               </div>

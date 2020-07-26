@@ -15,6 +15,15 @@
     position: relative;
     top: 0;
     background-color: var(--primary-color);
+    z-index: 99;
+}
+
+.header .logo {
+    position: relative;
+    z-index: 9;
+    left: 1em;
+    top: 2em;
+    z-index: 199;
 }
 
 .header img {
@@ -114,22 +123,18 @@
         flex-direction: row;
         justify-content: center;
     }
-
     .sub-link {
         font-size: 0.9em;
         padding: 1em 0em;
         margin: 0 12px !important;
     }
-
     .loogo {
         visibility: hidden;
     }
-
     .link {
         width: 50px;
         padding: 0.4em 0.6em;
     }
-
     .nav-container {
         left: 0.3em;
         position: relative;
@@ -142,9 +147,7 @@
         padding: 0.7em 0em;
         margin: 0 22px !important;
     }
-
     .loogo {
         visibility: hidden;
     }
-
 }
