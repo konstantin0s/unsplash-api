@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import logo from './img/unsplash.png';
 import './css/header.css';
 
 class Header extends Component {
@@ -13,7 +14,7 @@ class Header extends Component {
             <div className="loogo">
               <Link style={linkStyle} className="logoStyle" to="#">Unsplease</Link>
               <p>Photos for everyone</p>
-              <img className="logo" src="unsplash.png" alt="logo"/>
+                        <img className="logo" src={logo} alt="logo"/>
             </div>
 
             <Link style={linkStyle} className="link" to="/">Random</Link>
